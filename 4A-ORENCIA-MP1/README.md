@@ -1,4 +1,7 @@
 # Machine Problem No. 1: Exploring the Role of Computer Vision and Image Processing in AI
+
+https://github.com/user-attachments/assets/f8e89efa-216b-4ab1-8adf-fa10b1260d3d
+
 ---
 ## Objective
 Understand the importance of computer vision and image processing in Artificial Intelligence (AI) and explore how these technologies enable AI systems to analyze and interpret visual data.
