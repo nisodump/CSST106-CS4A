@@ -44,13 +44,21 @@ image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
 
 display_image(image, "Original Image")
 ```
+![Original Image](https://github.com/user-attachments/assets/a356bb1e-e5e9-429a-b4d7-125605ff178d)
 
 ### Lab Session 1: Image Transformations
 - **Scaling and Rotation**: Learn how to apply scaling and rotation transformations to images using OpenCV.
 - **Implementation**: Practice these transformations on sample images provided in the lab.
+
+![Scaled and Rotated Image](https://github.com/user-attachments/assets/f547ca6f-7256-487b-b252-62c57dac47c8)
+
 ### Lab Session 2: Filtering Techniques
 - **Blurring and Edge Detection**: Explore how to apply blurring filters and edge detection algorithms to images using OpenCV.
 - **Implementation**: Apply these filters to sample images to understand their effects.
+
+![Blurring Filters](https://github.com/user-attachments/assets/54191a85-386c-4357-a1f6-e8bd93fff951)
+![Edge Detection](https://github.com/user-attachments/assets/f61e5358-aba7-41a8-95cd-d5691f0d5d21)
+
 ## Problem-Solving Session
 ### Common Image Processing Tasks:
 - Engage in a problem-solving session focused on common challenges encountered in image processing tasks
@@ -62,6 +70,9 @@ display_image(image, "Original Image")
 - **Gaussian Blur**: It smoothens the image by averaging pixel values in a neighborhood.
 - **Median Filter**: It replaces each pixel with the median value of the neighborhood.
 - **Bilateral Filter**: It smoothens the image based on both spatial and intensity information.
+
+![Blurring Filters Scenario](https://github.com/user-attachments/assets/f825c3ff-3e81-426e-9280-a643e16b96b9)
+
 #### Scenario 2: Edge Detection
 **Problem**: Identify edges in an image to understand the structure and boundaries of objects.
 
@@ -70,6 +81,8 @@ display_image(image, "Original Image")
 - **Sobel Edge Detection**: Detects edges by calculating gradients in the x and y directions and combining them.
 - **Prewitt Edge Detection**: Similar to Sobel but uses different kernels for gradient computation.
 - **Laplacian Edge Detection**: Detects edges by calculating the second derivative of the image.
+
+![Edge Detection](https://github.com/user-attachments/assets/e040d61e-57d1-475a-81e8-7870f532541d)
 
 ## Assignment
 ### Implementing Image Transformations and Filtering:
@@ -215,6 +228,8 @@ plt.axis('off')
 plt.tight_layout()
 plt.show()
 ```
+
+![Implementing Image Transformation and Filtering](https://github.com/user-attachments/assets/01a0e32a-5945-4ca2-9b10-a35533b442b7)
 
 - **Documentation**: Document the steps taken, and the results achieved in a report.
 
