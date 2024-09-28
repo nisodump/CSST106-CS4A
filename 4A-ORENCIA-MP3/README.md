@@ -14,14 +14,26 @@ You are tasked with loading two images and performing the following steps:
 - Apply the **SIFT** algorithm to detect keypoints and compute descriptors for both images.
 - Apply the **SURF** algorithm to do the same.
 - Finally, apply **ORB** to extract keypoints and descriptors
+
+![SIFT Keypoints](https://github.com/user-attachments/assets/d3bdc446-8a42-4302-aa7f-4ac3adcff5b0)
+![SURF Keypoints](https://github.com/user-attachments/assets/fe729882-0738-4656-b2b6-b6972a4bf66d)
+![ORB Keypoints](https://github.com/user-attachments/assets/947f3904-8efa-4010-a10b-6f744bc7ed11)
+
 ### Step 3: Feature Matching with Brute-Force and FLANN
 - Match the descriptors between the two images using **Brute-Force Matcher**.
 - Repeat the process using the **FLANN Matcher**.
 - For each matching method, display the matches with lines connecting corresponding keypoints between the two images.
+
+![Feature Matching with Brute Force Matcher using ORB](https://github.com/user-attachments/assets/8b5ae1f2-bf06-49d6-825a-1db40f9703c0)
+![Feature Matching with FLANN Matcher using ORB](https://github.com/user-attachments/assets/5ad0fc24-c3d7-47b9-9e48-076b37d49b62)
+
 ### Step 4: Image Alignment Using Homography
 - Use the matched keypoints from SIFT (or any other method) to compute a **homography matrix**.
 - Use this matrix to warp one image onto the other.
 - Display and save the aligned and warped images.
+
+![Aligned Image](https://github.com/user-attachments/assets/38747398-6a53-4586-bee2-d24c4091010b)
+
 ### Step 5: Performance Analysis
 #### Performance of SIFT, SURF, and ORB
 ##### Keypoint Detection Accuracy
@@ -63,19 +75,19 @@ You are tasked with loading two images and performing the following steps:
 1. **High number of matches**: It found 86 matches, which is a large number for matching ORB descriptors.
 2. **Simple and thorough**: BFMatcher guarantees finding the closest matches because it compares every descriptor with all others.
 - **Cons**:
- 1. **Quality**: Since it doesn't apply sophisticated filtering, the matches might include more false positives, where points that don't actually correspond to each other are considered matches.
- 2. **Speed**: It is slower, especially for large datasets, because it performs an exhaustive search through all descriptors.
+1. **Quality**: Since it doesn't apply sophisticated filtering, the matches might include more false positives, where points that don't actually correspond to each other are considered matches.
+2. **Speed**: It is slower, especially for large datasets, because it performs an exhaustive search through all descriptors.
 #### FLANN Matcher (Fast Library for Approximate Nearest Neighbors)
 - **Number of Good Matches**: 12
 - **Explanation**: The FLANN Matcher is designed for faster and more efficient matching, especially when working with large datasets or high-dimensional descriptors. It uses approximate nearest neighbor algorithms and is typically more suited for floating-point descriptors like those from SIFT and SURF. For ORB, which uses binary descriptors, FLANN is less commonly used but still effective with proper configuration.
 
 **Effectiveness**:
 - **Pros**:
- 1. **Higher match quality**: By applying Lowe's ratio test, the FLANN matcher filters out poor matches, resulting in fewer but more reliable matches (12 good matches). This means it focuses on high-quality correspondences rather than quantity.
- 2. **Speed**: FLANN is optimized for faster matching, which makes it more efficient for large datasets. Though in this case, with ORB (which uses binary descriptors), the improvement may not be as dramatic as with floating-point descriptors.
+1. **Higher match quality**: By applying Lowe's ratio test, the FLANN matcher filters out poor matches, resulting in fewer but more reliable matches (12 good matches). This means it focuses on high-quality correspondences rather than quantity.
+2. **Speed**: FLANN is optimized for faster matching, which makes it more efficient for large datasets. Though in this case, with ORB (which uses binary descriptors), the improvement may not be as dramatic as with floating-point descriptors.
 - **Cons**:
- 1. **Lower number of matches**: The number of good matches is much smaller (12), which may limit its effectiveness when a higher number of matches is needed, or when the images have a lot of detailed features to be compared.
- 2. **Suitability for ORB**: FLANN is not inherently designed for binary descriptors, so it may not be as effective as it would be for floating-point descriptors (like SIFT/SURF).
+1. **Lower number of matches**: The number of good matches is much smaller (12), which may limit its effectiveness when a higher number of matches is needed, or when the images have a lot of detailed features to be compared.
+2. **Suitability for ORB**: FLANN is not inherently designed for binary descriptors, so it may not be as effective as it would be for floating-point descriptors (like SIFT/SURF).
 
 #### Feature Extraction
 - SIFT provides the most accurate keypoint detection but detects fewer keypoints and is slower than ORB. It is suitable for applications requiring precise feature matching.
