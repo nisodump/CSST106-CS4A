@@ -7,6 +7,7 @@ HOG is a feature descriptor widely used for object detection, particularly for h
 * Visualize the gradient orientations on the image.
 * Implement a simple object detector using HOG features.
 
+![HOG Object Detection](https://github.com/user-attachments/assets/59e95e8d-7d9b-447d-a74f-4428fb0b8697)
 
 The image result above comes from a code that first reads an image from a particular path, then proceeds with pre-processing. It crops the image to a square shape by finding its minimum dimension, along with further conversion into a grayscale intensity image for further analysis.
 
@@ -25,6 +26,7 @@ YOLO is a deep learning-based object detection method. In this exercise, you wil
 * Visualize the bounding boxes and class labels on the detected objects in the image.
 * Test the model on multiple images to observe its performance.
 
+![YOLO Object Detection](https://github.com/user-attachments/assets/f51d5aac-86e2-4750-8ec6-90afda7d372a)
 
 The result above comes from a written code that uses YOLO with OpenCV to execute an object detection pipeline. This code loads the weights and configuration of the YOLO model along with class names from the COCO dataset. The code then goes through a sequence of images cropped to a 3:2 aspect ratio. It's the result of a predefined function that performs a center crop. With each of the cropped images, a blob is created for sizing down to 416x416 pixels for proper input into the YOLO network.
 
@@ -43,8 +45,9 @@ SSD is a real-time object detection method. For this exercise:
 * Detect objects within the image and draw bounding boxes around them.
 * Compare the results with those obtained from the YOLO model.
 
+![SSD with Tensorflow](https://github.com/user-attachments/assets/9d79b283-9624-484e-843c-b9488dcf268d)
 
-The following code configures an object detection pipeline using the SSD MobileNet V2 model from TensorFlow Hub. The process begins with importing the pre-trained model and then defines a list of the image files to be analyzed. Each image reads and crops, utilizing a function that centers it into a 3:2 aspect ratio so that all the inputs are uniform.
+The following result above comes from a code configures an object detection pipeline using the SSD MobileNet V2 model from TensorFlow Hub. The process begins with importing the pre-trained model and then defines a list of the image files to be analyzed. Each image reads and crops, utilizing a function that centers it into a 3:2 aspect ratio so that all the inputs are uniform.
 
 After the images are cropped, they undergo a conversion to tensors and are then used to input into the TensorFlow model. It iterates over the tensor, detecting objects and returning detection boxes, confidence scores, and class identifiers for every detected object. A threshold of 0.5 is set for confidence scores to eliminate detections where the detection confidence is less than 0.5.
 
@@ -62,8 +65,7 @@ Compare traditional object detection (e.g., HOG-SVM) with deep learning-based me
 * Compare their performances in terms of accuracy and speed.
 * Document the advantages and disadvantages of each method.
 
-
-The following code above compares two object detection techniques which are HOG-SVM and YOLO. The technique HOG-SVM first extracts features from the input images. The code converts the images to grayscale, resizes them, and utilizes the HOG technique, which produces a feature vector. It now uses that vector as input to the SVM model for the purpose of prediction to classify whether the target object is presented in the image or not.
+The following code that compares two object detection techniques which are HOG-SVM and YOLO is written. The technique HOG-SVM first extracts features from the input images. The code converts the images to grayscale, resizes them, and utilizes the HOG technique, which produces a feature vector. It now uses that vector as input to the SVM model for the purpose of prediction to classify whether the target object is presented in the image or not.
 
 On the other hand, the YOLO approach depends on a pre-trained YOLO model to classify objects of interest right from the image. It checks whether the detected objects fall into a class of interest thus making it possible to do real-time detection in an efficient manner. The script consists of a training phase for the HOG-SVM model, which takes on a labeled dataset of images. This dataset contains the presence or absence of the object of interest labeled to be a person, among other things.
 
