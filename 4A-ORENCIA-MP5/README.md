@@ -94,7 +94,10 @@ def main():
 if __name__ == "__main__":
   main()
 ```
-### ### Overview of the Task
+
+![Output](https://github.com/user-attachments/assets/01c4d38b-fee6-4eb1-8670-ea1e0ef8b6d4)
+
+### Overview of the Task
 The `YOLO (You Only Look Once)` algorithm, specifically variant `YOLOv8n.pt` from Ultralytics, is a landmark in object detection technology, intended mainly for high-speed performances with a commendable quality of accuracy provided. The model's architecture is designed to support fast processing, thus making it perfect for real-time applications in the different fields applied. In this task, five images (`place-1.jpg` to `place-5.jpg`) were taken which discuss the detection capabilities and the measurements of performance based on the model.
 
 ### Detection Performance and Object Recognition
